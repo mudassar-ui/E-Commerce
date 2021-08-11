@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:shop_app_getx/view/product_overview_screen.dart';
 
 import 'view/product_overview_screen.dart';
+import '../view/product_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       home: ProductOverviewScreen(),
-      // getPages: [
-      //   GetPage(name: '/edit_product', page: () => EditProducts()),
-      // ],
+      getPages: [
+        GetPage(
+            name: '/Product_Details_Screen',
+            page: () => ProductDetailsScreen()),
+      ],
     );
   }
 }
