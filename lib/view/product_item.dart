@@ -1,14 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import '../model/product.dart';
 import 'package:get/get.dart';
 
 class ProductItem extends StatelessWidget {
-  final String id;
-  final String title;
-  final String imageUrl;
+  final Product product;
 
-  ProductItem(this.id, this.title, this.imageUrl);
+  ProductItem(this.product);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -16,22 +13,26 @@ class ProductItem extends StatelessWidget {
       child: GridTile(
         child: GestureDetector(
           onTap: () {
-            Get.toNamed('/Product_Details_Screen', arguments: id);
+            Get.toNamed('/Product_Details_Screen', arguments: product.id);
           },
           child: Image.network(
-            imageUrl,
+            product.imageUrl,
             fit: BoxFit.cover,
           ),
         ),
         footer: GridTileBar(
           backgroundColor: Colors.black54,
           leading: IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Obx(() => Icon(product.isFavorite.value
+                ? Icons.favorite
+                : Icons.favorite_border)),
             color: Theme.of(context).accentColor,
-            onPressed: () {},
+            onPressed: () {
+              product.toggleFavorite();
+            },
           ),
           title: Text(
-            title,
+            product.title,
             textAlign: TextAlign.center,
           ),
           trailing: IconButton(

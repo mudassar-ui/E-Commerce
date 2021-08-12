@@ -1,10 +1,12 @@
+import 'package:get/get.dart';
+
 class Product {
   final String id;
   final String title;
   final String description;
   final double price;
   final String imageUrl;
-  bool isFavorite;
+  final isFavorite = false.obs;
 
   Product({
     required this.id,
@@ -12,6 +14,9 @@ class Product {
     required this.description,
     required this.price,
     required this.imageUrl,
-    this.isFavorite = false,
   });
+
+  void toggleFavorite() {
+    isFavorite.value = !isFavorite.value;
+  }
 }
