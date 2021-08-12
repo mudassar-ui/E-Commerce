@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controller/products_controller.dart';
+import '../../controller/products_controller.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final ProductsController productsController = Get.put(ProductsController());

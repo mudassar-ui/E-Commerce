@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../model/product.dart';
 
 class ProductsController extends GetxController {
-  final List<Product> _products = [
+  final List<Product> products = [
     Product(
       id: 'p1',
       title: 'Red Shirt',
@@ -39,15 +39,8 @@ class ProductsController extends GetxController {
 
   final showfavorites = false.obs;
 
-  List<Product> get products {
-    // if (showfavorites.value) {
-    //   return _products.where((prod) => prod.isFavorite.value).toList();
-    // }
-    return [..._products];
-  }
-
   List<Product> get favoriteItems {
-    return _products.where((prod) => prod.isFavorite.value).toList();
+    return products.where((prod) => prod.isFavorite.value).toList();
   }
 
   void showFavorite() {
@@ -59,7 +52,7 @@ class ProductsController extends GetxController {
   }
 
   Product findById(String id) {
-    return _products.firstWhere((prod) => prod.id == id);
+    return products.firstWhere((prod) => prod.id == id);
   }
 
   void addProduct(Product product) {
@@ -69,6 +62,6 @@ class ProductsController extends GetxController {
         description: product.description,
         price: product.price,
         imageUrl: product.imageUrl);
-    _products.add(newProduct);
+    products.add(newProduct);
   }
 }

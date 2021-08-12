@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controller/products_controller.dart';
-import '../view/product_item.dart';
+import '../../controller/products_controller.dart';
+import '../../controller/cart_controller.dart';
+import '../widgets/product_item.dart';
+
+import '../widgets/badge.dart';
 
 enum FilterOption {
   Favorite,
@@ -10,10 +13,10 @@ enum FilterOption {
 }
 
 class ProductOverviewScreen extends StatelessWidget {
-  final ProductsController productsController = Get.put(ProductsController());
-
   @override
   Widget build(BuildContext context) {
+    final ProductsController productsController = Get.put(ProductsController());
+    final CartController cartController = Get.put(CartController());
     return Scaffold(
         appBar: AppBar(
           title: Text('Mudassar App'),
@@ -37,6 +40,20 @@ class ProductOverviewScreen extends StatelessWidget {
                         value: FilterOption.All,
                       ),
                     ]),
+            Obx(() {
+              return Badge(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.shopping_cart,
+                  ),
+                  onPressed: () {
+                    //Navigator.of(context).pushNamed(CartScreen.routeName);
+                    Get.toNamed('/cart_screen');
+                  },
+                ),
+                value: cartController.itemCount.toString(),
+              );
+            })
           ],
         ),
         body: Obx(() {
