@@ -34,6 +34,15 @@ class CartItem extends StatelessWidget {
       direction: DismissDirection.endToStart,
       onDismissed: (direction) {
         cartController.removeItem(productid);
+
+        Get.snackbar(
+          "$title",
+          "Deleted",
+          icon: Icon(Icons.delete, color: Colors.black),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.red,
+          borderRadius: 0,
+        );
       },
       confirmDismiss: (DismissDirection direction) {
         return showDialog(
