@@ -34,4 +34,17 @@ class CartController extends GetxController {
               ));
     }
   }
+
+  double get totalAmount {
+    var total = 0.0;
+    cartItems.forEach((key, cartItem) {
+      total = total + cartItem.price * cartItem.quantity;
+    });
+    return total;
+  }
+
+  void removeItem(String productid) {
+    cartItems.remove(productid);
+    //notifyListeners();
+  }
 }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../controller/products_controller.dart';
 import '../../controller/cart_controller.dart';
+
 import '../widgets/product_item.dart';
 
 import '../widgets/badge.dart';
@@ -48,7 +49,7 @@ class ProductOverviewScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     //Navigator.of(context).pushNamed(CartScreen.routeName);
-                    Get.toNamed('/cart_screen');
+                    Get.toNamed('/Cart_Screen');
                   },
                 ),
                 value: cartController.itemCount.toString(),
