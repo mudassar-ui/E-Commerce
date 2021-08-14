@@ -11,10 +11,10 @@ class CartItem extends StatelessWidget {
   final int quantity;
 
   CartItem(this.id, this.productid, this.price, this.title, this.quantity);
-  final CartController cartController = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
+    final CartController cartController = Get.put(CartController());
     return Dismissible(
       key: ValueKey(id),
       background: Container(

@@ -45,6 +45,9 @@ class CartController extends GetxController {
 
   void removeItem(String productid) {
     cartItems.remove(productid);
-    //notifyListeners();
+  }
+
+  void clearCart() {
+    cartItems.value = <String, CartItem>{};
   }
 }

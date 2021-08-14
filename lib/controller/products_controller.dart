@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../model/product.dart';
 
 class ProductsController extends GetxController {
-  final List<Product> products = [
+  final products = <Product>[
     Product(
       id: 'p1',
       title: 'Red Shirt',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../view/widgets/app_drawer.dart';
 
 import '../../controller/products_controller.dart';
 import '../../controller/cart_controller.dart';
@@ -57,6 +58,7 @@ class ProductOverviewScreen extends StatelessWidget {
             })
           ],
         ),
+        drawer: AppDrawer(),
         body: Obx(() {
           final newProduct = productsController.showfavorites.value
               ? productsController.favoriteItems
