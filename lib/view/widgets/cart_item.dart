@@ -14,7 +14,7 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CartController cartController = Get.put(CartController());
+    final CartController cartController = Get.find();
     return Dismissible(
       key: ValueKey(id),
       background: Container(

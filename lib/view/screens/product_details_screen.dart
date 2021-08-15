@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../controller/products_controller.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  final ProductsController productsController = Get.put(ProductsController());
+  final ProductsController productsController = Get.find();
 
   @override
   Widget build(BuildContext context) {

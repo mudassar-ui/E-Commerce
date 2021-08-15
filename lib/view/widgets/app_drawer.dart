@@ -36,6 +36,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               // Navigator.of(context)
               //     .pushReplacementNamed(UserProductScreen.routeName);
+              Get.offNamed('/user_products_screen');
             },
           )
         ],

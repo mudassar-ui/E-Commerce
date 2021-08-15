@@ -8,8 +8,9 @@ import '../widgets/cart_item.dart';
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CartController cartController = Get.put(CartController());
-    final OrderController orderController = Get.put(OrderController());
+    final CartController cartController = Get.find();
+    final OrderController orderController = Get.find();
+
     print(cartController.cartItems);
     print(cartController.totalAmount);
     return Scaffold(

@@ -17,8 +17,8 @@ enum FilterOption {
 class ProductOverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final ProductsController productsController = Get.put(ProductsController());
-    final CartController cartController = Get.put(CartController());
+    final ProductsController productsController = Get.find();
+    final CartController cartController = Get.find();
     return Scaffold(
         appBar: AppBar(
           title: Text('Mudassar App'),

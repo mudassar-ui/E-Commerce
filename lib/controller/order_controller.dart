@@ -3,8 +3,8 @@ import '../model/order.dart';
 import '../model/cart.dart';
 
 class OrderController extends GetxController {
-  final orders = <OrderItems>[].obs;
-  final expanded = false.obs;
+  final orders = <OrderItems>[];
+  // final expanded = false.obs;
 
   //this method add orders
 
@@ -17,10 +17,11 @@ class OrderController extends GetxController {
         dateTime: DateTime.now(),
       ),
     );
-    print('add order : ${orders}');
+    update();
+    print('add order : ${orders.length}');
   }
 
-  void expand() {
-    expanded.value = !expanded.value;
-  }
+  // void expand() {
+  //   expanded.value = !expanded.value;
+  // }
 }

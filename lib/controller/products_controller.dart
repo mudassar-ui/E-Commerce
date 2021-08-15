@@ -64,4 +64,8 @@ class ProductsController extends GetxController {
         imageUrl: product.imageUrl);
     products.add(newProduct);
   }
+
+  void deleteProduct(String id) {
+    products.removeWhere((prod) => prod.id == id);
+  }
 }
