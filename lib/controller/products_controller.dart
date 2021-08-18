@@ -65,6 +65,16 @@ class ProductsController extends GetxController {
     products.add(newProduct);
   }
 
+  //edit existing product
+  void updateProduct(String id, Product newProduct) {
+    final prodIndex = products.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      products[prodIndex] = newProduct;
+    } else {
+      print('...');
+    }
+  }
+
   void deleteProduct(String id) {
     products.removeWhere((prod) => prod.id == id);
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app_getx/controller/cart_controller.dart';
 import 'package:shop_app_getx/controller/products_controller.dart';
+import 'package:shop_app_getx/view/screens/edit_products_screen.dart';
 import 'package:shop_app_getx/view/screens/product_details_screen.dart';
 import 'package:shop_app_getx/view/screens/product_overview_screen.dart';
 import 'package:shop_app_getx/view/screens/cart_screen.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/Cart_Screen', page: () => CartScreen()),
         GetPage(name: '/order_screen', page: () => OrderScreen()),
         GetPage(name: '/user_products_screen', page: () => UserProductScreen()),
+        GetPage(name: '/edit_products_screen', page: () => EditProductScreen()),
       ],
     );
   }

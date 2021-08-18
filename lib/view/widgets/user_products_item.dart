@@ -26,7 +26,9 @@ class UserProductItem extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.edit),
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/edit_products_screen', arguments: id);
+              },
               color: Theme.of(context).primaryColor,
             ),
             IconButton(
